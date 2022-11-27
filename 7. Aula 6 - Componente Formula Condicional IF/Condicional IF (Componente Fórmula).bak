@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\Abdala\Desktop\breno\Alteryx na prática\7. Aula 6 - Componente Formula Condicional IF\base\titanic.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>titanic.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Survived" size="254" source="File: C:\Users\Abdala\Desktop\breno\Alteryx na prática\7. Aula 6 - Componente Formula Condicional IF\base\titanic.csv" type="V_String" />
+            <Field name="Pclass" size="254" source="File: C:\Users\Abdala\Desktop\breno\Alteryx na prática\7. Aula 6 - Componente Formula Condicional IF\base\titanic.csv" type="V_String" />
+            <Field name="Name" size="254" source="File: C:\Users\Abdala\Desktop\breno\Alteryx na prática\7. Aula 6 - Componente Formula Condicional IF\base\titanic.csv" type="V_String" />
+            <Field name="Sex" size="254" source="File: C:\Users\Abdala\Desktop\breno\Alteryx na prática\7. Aula 6 - Componente Formula Condicional IF\base\titanic.csv" type="V_String" />
+            <Field name="Age" size="254" source="File: C:\Users\Abdala\Desktop\breno\Alteryx na prática\7. Aula 6 - Componente Formula Condicional IF\base\titanic.csv" type="V_String" />
+            <Field name="Siblings/Spouses Aboard" size="254" source="File: C:\Users\Abdala\Desktop\breno\Alteryx na prática\7. Aula 6 - Componente Formula Condicional IF\base\titanic.csv" type="V_String" />
+            <Field name="Parents/Children Aboard" size="254" source="File: C:\Users\Abdala\Desktop\breno\Alteryx na prática\7. Aula 6 - Componente Formula Condicional IF\base\titanic.csv" type="V_String" />
+            <Field name="Fare" size="254" source="File: C:\Users\Abdala\Desktop\breno\Alteryx na prática\7. Aula 6 - Componente Formula Condicional IF\base\titanic.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="210" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [Sex] == &quot;male&quot; &#xA;THEN &quot;Masculino&quot; &#xA;ELSE &quot;Feminino&quot; &#xA;ENDIF" field="Sexo_condicionado" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Sexo_condicionado = IF [Sex] == "male" 
+THEN "Masculino" 
+ELSE "Feminino" 
+ENDIF...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="558" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\Abdala\AppData\Local\Temp\Engine_2044_55964cb83c69934193c9e7babbf91a25_\Engine_2044_c600a9c69fc6c544aff30a42cd4479fb~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Perfil</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="390" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [Sexo_condicionado] = 'Masculino' &#xA;THEN 'Homem'&#xA; ELSEIF [Sexo_condicionado] =='Feminino' THEN 'Mulher' ELSE 'Valor Inválido' ENDIF" field="Classificação" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Classificação = IF [Sexo_condicionado] = 'Masculino' 
+THEN 'Homem'
+ ELSEIF [Sexo...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Condicional IF (Componente Fórmula)</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="409a8c97-d7d5-4dd7-be26-f762e3df6587" />
+      <Telemetry>
+        <PreviousWorkflowId value="4d738b0a-c1c7-41a4-842b-1820def85463" />
+        <OriginWorkflowId value="4d738b0a-c1c7-41a4-842b-1820def85463" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

@@ -1,0 +1,101 @@
+Identificação do Passageiro,Nome,Sexo,Idade,Classificacao_por_idade
+4000,Mr. Owen Harris Braund,male,22,ADULTO
+4001,Mrs. John Bradley (Florence Briggs Thayer) Cumings,female,38,ADULTO
+4002,Miss. Laina Heikkinen,female,26,ADULTO
+4003,Mrs. Jacques Heath (Lily May Peel) Futrelle,female,35,ADULTO
+4004,Mr. William Henry Allen,male,35,ADULTO
+4005,Mr. James Moran,male,27,ADULTO
+4006,Mr. Timothy J McCarthy,male,54,ADULTO
+4008,Mrs. Oscar W (Elisabeth Vilhelmina Berg) Johnson,female,27,ADULTO
+4011,Miss. Elizabeth Bonnell,female,58,ADULTO
+4013,Mr. Anders Johan Andersson,male,39,ADULTO
+4015,Mrs. (Mary D Kingcome) Hewlett,female,55,ADULTO
+4017,Mr. Charles Eugene Williams,male,23,ADULTO
+4018,Mrs. Julius (Emelia Maria Vandemoortele) Vander Planke,female,31,ADULTO
+4019,Mrs. Fatima Masselmani,female,22,ADULTO
+4020,Mr. Joseph J Fynney,male,35,ADULTO
+4021,Mr. Lawrence Beesley,male,34,ADULTO
+4023,Mr. William Thompson Sloper,male,28,ADULTO
+4025,Mrs. Carl Oscar (Selma Augusta Emilia Johansson) Asplund,female,38,ADULTO
+4026,Mr. Farred Chehab Emir,male,26,ADULTO
+4028,"Miss. Ellen O'Dwyer",female,24,ADULTO
+4029,Mr. Lalio Todoroff,male,23,ADULTO
+4030,Don. Manuel E Uruchurtu,male,40,ADULTO
+4031,Mrs. William Augustus (Marie Eugenie) Spencer,female,48,ADULTO
+4033,Mr. Edward H Wheadon,male,66,ADULTO
+4034,Mr. Edgar Joseph Meyer,male,28,ADULTO
+4035,Mr. Alexander Oskar Holverson,male,42,ADULTO
+4037,Mr. Ernest Charles Cann,male,21,ADULTO
+4040,Mrs. Johan (Johanna Persdotter Larsson) Ahlin,female,40,ADULTO
+4041,Mrs. William John Robert (Dorothy Ann Wonnacott) Turpin,female,27,ADULTO
+4044,Mr. William John Rogers,male,30,ADULTO
+4046,"Miss. Bridget O'Driscoll",female,27,ADULTO
+4050,Mr. Richard Cater Nosworthy,male,21,ADULTO
+4051,Mrs. Henry Sleeper (Myna Haxtun) Harper,female,49,ADULTO
+4052,Mrs. Lizzie (Elizabeth Anne Wilkinson) Faunthorpe,female,29,ADULTO
+4053,Mr. Engelhart Cornelius Ostby,male,65,ADULTO
+4054,Mr. Hugh Woolner,male,46,ADULTO
+4055,Miss. Emily Rugg,female,21,ADULTO
+4056,Mr. Mansouer Novel,male,28.5,ADULTO
+4059,Mr. Orsen Sirayanian,male,22,ADULTO
+4060,Miss. Amelie Icard,female,38,ADULTO
+4061,Mr. Henry Birkhardt Harris,male,45,ADULTO
+4063,Mr. Albert A Stewart,male,64,ADULTO
+4065,Mrs. (Elizabeth Ramell) Nye,female,29,ADULTO
+4068,Mr. Vincenz Kink,male,26,ADULTO
+4069,Mr. Stephen Curnow Jenkin,male,32,ADULTO
+4071,Mr. Ambrose Jr Hood,male,21,ADULTO
+4072,Mr. Apostolos Chronopoulos,male,26,ADULTO
+4073,Mr. Lee Bing,male,32,ADULTO
+4074,Mr. Sigurd Hansen Moen,male,25,ADULTO
+4075,Mr. Ivan Staneff,male,23,ADULTO
+4076,Mr. Rahamin Haim Moutal,male,28,ADULTO
+4078,Miss. Elizabeth Dowdell,female,30,ADULTO
+4079,Mr. Achille Waelens,male,22,ADULTO
+4080,Mr. Jan Baptist Sheerlinck,male,29,ADULTO
+4081,Miss. Brigdet Delia McDermott,female,31,ADULTO
+4082,Mr. Francisco M Carrau,male,28,ADULTO
+4084,Mrs. Karl Alfred (Maria Mathilda Gustafsson) Backstrom,female,33,ADULTO
+4087,Miss. Mabel Helen Fortune,female,23,ADULTO
+4088,Mr. Francesco Celotti,male,24,ADULTO
+4089,Mr. Emil Christmann,male,29,ADULTO
+4091,Mr. Herbert Fuller Chaffee,male,46,ADULTO
+4092,Mr. Bertram Frank Dean,male,26,ADULTO
+4093,Mr. Daniel Coxon,male,59,ADULTO
+4094,Mr. Charles Joseph Shorney,male,22,ADULTO
+4095,Mr. George B Goldschmidt,male,71,ADULTO
+4096,Mr. William Bertram Greenfield,male,23,ADULTO
+4097,Mrs. John T (Ada Julia Bone) Doling,female,34,ADULTO
+4098,Mr. Sinai Kantor,male,34,ADULTO
+4099,Miss. Matilda Petranec,female,28,ADULTO
+4100,Mr. Pastcho Petroff,male,29,ADULTO
+4101,Mr. Richard Frasar White,male,21,ADULTO
+4102,Mr. Gustaf Joel Johansson,male,33,ADULTO
+4103,Mr. Anders Vilhelm Gustafsson,male,37,ADULTO
+4104,Mr. Stoytcho Mionoff,male,28,ADULTO
+4105,Miss. Anna Kristine Salkjelsvik,female,21,ADULTO
+4106,Mr. Albert Johan Moss,male,29,ADULTO
+4107,Mr. Tido Rekic,male,38,ADULTO
+4108,Miss. Bertha Moran,female,28,ADULTO
+4109,Mr. Walter Chamberlain Porter,male,47,ADULTO
+4111,Mr. David John Barton,male,22,ADULTO
+4114,Mr. Edvard Pekoniemi,male,21,ADULTO
+4115,Mr. Patrick Connors,male,70.5,ADULTO
+4116,Mr. William John Robert Turpin,male,29,ADULTO
+4117,Mr. Quigg Edmond Baxter,male,24,ADULTO
+4119,Mr. Stanley George Hickman,male,21,ADULTO
+4121,Mr. Nicholas Nasser,male,32.5,ADULTO
+4122,Miss. Susan Webber,female,32.5,ADULTO
+4123,Mr. Percival Wayland White,male,54,ADULTO
+4126,Mr. Fridtjof Arne Madsen,male,24,ADULTO
+4128,Mr. Johan Ekstrom,male,45,ADULTO
+4129,Mr. Jozef Drazenoic,male,33,ADULTO
+4131,Mrs. Alexander A (Grace Charity Laury) Robins,female,47,ADULTO
+4132,Mrs. Leopold (Mathilde Francoise Pede) Weisz,female,29,ADULTO
+4133,Mr. Samuel James Hayden Sobey,male,25,ADULTO
+4134,Mr. Emile Richard,male,23,ADULTO
+4136,Mr. Jacques Heath Futrelle,male,37,ADULTO
+4138,Mr. Victor Giglio,male,24,ADULTO
+4139,Mrs. Joseph (Sultana) Boulos,female,40,ADULTO
+4140,Miss. Anna Sofia Nysten,female,22,ADULTO
+4141,Mrs. Pekka Pietari (Elin Matilda Dolck) Hakkarainen,female,24,ADULTO
