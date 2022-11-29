@@ -1,0 +1,7 @@
+1° https://medium.com/@alexandreservian/regex-um-guia-pratico-para-express%C3%B5es-regulares-1ac5fa4dd39f
+
+2° https://regexr.com/
+
+3° https://regex101.com/
+
+4° https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/RegExp

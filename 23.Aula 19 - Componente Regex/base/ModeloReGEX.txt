@@ -1,0 +1,3 @@
+(\d\d) --> Grupo de seleção 1: Separando números
+\s(\<\w+\>) --> Grupo de seleção 2: Separando Carácteres de texto
+\s(.*) --> Grupo de seleção 3: Separando tudo o que sobrar

@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+        <Position x="150" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <URLField>Field1</URLField>
+          <OutputMode>String</OutputMode>
+          <CodePage>65001</CodePage>
+          <EncodeURLs value="True" />
+          <Headers>
+            <NameValues />
+            <Fields orderChanged="False">
+              <Field name="Field1" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </Fields>
+          </Headers>
+          <Payload>
+            <HTTPAction>GET</HTTPAction>
+            <QueryStringBodyMode>Compose</QueryStringBodyMode>
+            <ComposeNameValues />
+            <ComposeFields orderChanged="False">
+              <Field name="Field1" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </ComposeFields>
+          </Payload>
+          <numConnections>2</numConnections>
+          <Timeout>600</Timeout>
+          <EnableRPM value="False" />
+          <Password />
+          <UserName />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="78" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="Field1" />
+          </Fields>
+          <Data>
+            <r>
+              <c>https://swapi.dev/api/people/1/</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="534" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\yasmi\AppData\Local\Temp\Engine_2400_31a03f2d88a8cc4784902c224446eed6_\Engine_2400_40175dd32ff32b47be832f8ea8782ded~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Perfil</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+        <Position x="246" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <JSON_Field>DownloadData</JSON_Field>
+          <IncludeInOutput value="False" />
+          <SingleField value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="342" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="JSON_ValueString" />
+          </GroupFields>
+          <HeaderField field="JSON_Name" />
+          <DataField field="JSON_ValueString" />
+          <Methods>
+            <Method method="First" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="JSON_ValueString" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="birth_year" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="created" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="edited" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="eye_color" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="films_0" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="films_1" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="films_2" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="films_3" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="gender" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="hair_color" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="height" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="homeworld" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="mass" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="name" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="skin_color" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="starships_0" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="starships_1" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="url" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="vehicles_0" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="vehicles_1" size="1073741823" source="JSON_Parse" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="438" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="JSON_ValueString" selected="True" />
+            <SelectField field="birth_year" selected="True" />
+            <SelectField field="created" selected="True" />
+            <SelectField field="edited" selected="True" />
+            <SelectField field="eye_color" selected="True" />
+            <SelectField field="films_0" selected="True" />
+            <SelectField field="films_1" selected="True" />
+            <SelectField field="films_2" selected="True" />
+            <SelectField field="films_3" selected="True" />
+            <SelectField field="gender" selected="True" />
+            <SelectField field="hair_color" selected="True" />
+            <SelectField field="height" selected="True" />
+            <SelectField field="homeworld" selected="True" />
+            <SelectField field="mass" selected="True" />
+            <SelectField field="name" selected="True" />
+            <SelectField field="skin_color" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Componente Baixar e Componente JSON</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="077de3d0-00a2-4f75-be4a-040b1a86b02f" />
+      <Telemetry>
+        <PreviousWorkflowId value="3bda0746-95ea-46d2-b9a9-854adb6428c7" />
+        <OriginWorkflowId value="3bda0746-95ea-46d2-b9a9-854adb6428c7" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

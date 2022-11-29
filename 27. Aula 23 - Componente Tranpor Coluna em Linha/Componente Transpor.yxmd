@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\yasmi\Desktop\Breno\Alteryx\27. Aula 23 - Componente Tranpor Coluna em Linha\base\Presidentes.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Presidentes.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="presidentNo" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\27. Aula 23 - Componente Tranpor Coluna em Linha\base\Presidentes.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="VicePresidentNo" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\27. Aula 23 - Componente Tranpor Coluna em Linha\base\Presidentes.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Pres_or_VP" size="255" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\27. Aula 23 - Componente Tranpor Coluna em Linha\base\Presidentes.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Name" size="255" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\27. Aula 23 - Componente Tranpor Coluna em Linha\base\Presidentes.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Dates" size="255" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\27. Aula 23 - Componente Tranpor Coluna em Linha\base\Presidentes.xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="162" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="Pres_or_VP" />
+          </GroupFields>
+          <HeaderField field="presidentNo" />
+          <DataField field="Name" />
+          <Methods>
+            <Method method="Concat" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Pres_or_VP" size="255" source="CrossTab:Group:Concat:" type="V_String" />
+            <Field name="1" size="2048" source="CrossTab:Header:presidentNo:1:Concat:" type="V_String" />
+            <Field name="2" size="2048" source="CrossTab:Header:presidentNo:2:Concat:" type="V_String" />
+            <Field name="3" size="2048" source="CrossTab:Header:presidentNo:3:Concat:" type="V_String" />
+            <Field name="4" size="2048" source="CrossTab:Header:presidentNo:4:Concat:" type="V_String" />
+            <Field name="5" size="2048" source="CrossTab:Header:presidentNo:5:Concat:" type="V_String" />
+            <Field name="6" size="2048" source="CrossTab:Header:presidentNo:6:Concat:" type="V_String" />
+            <Field name="7" size="2048" source="CrossTab:Header:presidentNo:7:Concat:" type="V_String" />
+            <Field name="8" size="2048" source="CrossTab:Header:presidentNo:8:Concat:" type="V_String" />
+            <Field name="9" size="2048" source="CrossTab:Header:presidentNo:9:Concat:" type="V_String" />
+            <Field name="10" size="2048" source="CrossTab:Header:presidentNo:10:Concat:" type="V_String" />
+            <Field name="11" size="2048" source="CrossTab:Header:presidentNo:11:Concat:" type="V_String" />
+            <Field name="12" size="2048" source="CrossTab:Header:presidentNo:12:Concat:" type="V_String" />
+            <Field name="13" size="2048" source="CrossTab:Header:presidentNo:13:Concat:" type="V_String" />
+            <Field name="14" size="2048" source="CrossTab:Header:presidentNo:14:Concat:" type="V_String" />
+            <Field name="15" size="2048" source="CrossTab:Header:presidentNo:15:Concat:" type="V_String" />
+            <Field name="16" size="2048" source="CrossTab:Header:presidentNo:16:Concat:" type="V_String" />
+            <Field name="17" size="2048" source="CrossTab:Header:presidentNo:17:Concat:" type="V_String" />
+            <Field name="18" size="2048" source="CrossTab:Header:presidentNo:18:Concat:" type="V_String" />
+            <Field name="19" size="2048" source="CrossTab:Header:presidentNo:19:Concat:" type="V_String" />
+            <Field name="20" size="2048" source="CrossTab:Header:presidentNo:20:Concat:" type="V_String" />
+            <Field name="21" size="2048" source="CrossTab:Header:presidentNo:21:Concat:" type="V_String" />
+            <Field name="22" size="2048" source="CrossTab:Header:presidentNo:22:Concat:" type="V_String" />
+            <Field name="23" size="2048" source="CrossTab:Header:presidentNo:23:Concat:" type="V_String" />
+            <Field name="24" size="2048" source="CrossTab:Header:presidentNo:24:Concat:" type="V_String" />
+            <Field name="25" size="2048" source="CrossTab:Header:presidentNo:25:Concat:" type="V_String" />
+            <Field name="26" size="2048" source="CrossTab:Header:presidentNo:26:Concat:" type="V_String" />
+            <Field name="27" size="2048" source="CrossTab:Header:presidentNo:27:Concat:" type="V_String" />
+            <Field name="28" size="2048" source="CrossTab:Header:presidentNo:28:Concat:" type="V_String" />
+            <Field name="29" size="2048" source="CrossTab:Header:presidentNo:29:Concat:" type="V_String" />
+            <Field name="30" size="2048" source="CrossTab:Header:presidentNo:30:Concat:" type="V_String" />
+            <Field name="31" size="2048" source="CrossTab:Header:presidentNo:31:Concat:" type="V_String" />
+            <Field name="32" size="2048" source="CrossTab:Header:presidentNo:32:Concat:" type="V_String" />
+            <Field name="33" size="2048" source="CrossTab:Header:presidentNo:33:Concat:" type="V_String" />
+            <Field name="34" size="2048" source="CrossTab:Header:presidentNo:34:Concat:" type="V_String" />
+            <Field name="35" size="2048" source="CrossTab:Header:presidentNo:35:Concat:" type="V_String" />
+            <Field name="36" size="2048" source="CrossTab:Header:presidentNo:36:Concat:" type="V_String" />
+            <Field name="37" size="2048" source="CrossTab:Header:presidentNo:37:Concat:" type="V_String" />
+            <Field name="38" size="2048" source="CrossTab:Header:presidentNo:38:Concat:" type="V_String" />
+            <Field name="39" size="2048" source="CrossTab:Header:presidentNo:39:Concat:" type="V_String" />
+            <Field name="40" size="2048" source="CrossTab:Header:presidentNo:40:Concat:" type="V_String" />
+            <Field name="41" size="2048" source="CrossTab:Header:presidentNo:41:Concat:" type="V_String" />
+            <Field name="42" size="2048" source="CrossTab:Header:presidentNo:42:Concat:" type="V_String" />
+            <Field name="43" size="2048" source="CrossTab:Header:presidentNo:43:Concat:" type="V_String" />
+            <Field name="44" size="2048" source="CrossTab:Header:presidentNo:44:Concat:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="282" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\yasmi\AppData\Local\Temp\Engine_7352_6a4c1edef173144597c409ff0e9e85e1_\Engine_7352_3b7445a21234fe4a80e44a2db0e5c986~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Perfil</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Componente Transpor</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="abd0676e-9cfd-423c-951c-7cd7e4c0d762" />
+      <Telemetry>
+        <PreviousWorkflowId value="572a651a-30a5-4303-90b9-ecc0ed3536cb" />
+        <OriginWorkflowId value="572a651a-30a5-4303-90b9-ecc0ed3536cb" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

@@ -1,0 +1,502 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="42" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\yasmi\Desktop\Breno\Alteryx\Projeto 2\base\Alunos.xlsx|||`Planilha1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Alunos.xlsx
+Query=`Planilha1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="ID_ALUNO" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\Projeto 2\base\Alunos.xlsx|||`Planilha1$`" type="Double" />
+            <Field name="NOME" size="255" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\Projeto 2\base\Alunos.xlsx|||`Planilha1$`" type="V_String" />
+            <Field name="IDADE" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\Projeto 2\base\Alunos.xlsx|||`Planilha1$`" type="Double" />
+            <Field name="TURMA" size="255" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\Projeto 2\base\Alunos.xlsx|||`Planilha1$`" type="V_String" />
+            <Field name="NOTAS_BI" size="255" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\Projeto 2\base\Alunos.xlsx|||`Planilha1$`" type="V_String" />
+            <Field name="NOTAS" size="255" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\Projeto 2\base\Alunos.xlsx|||`Planilha1$`" type="V_String" />
+            <Field name="PESOS_BI" size="255" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\Projeto 2\base\Alunos.xlsx|||`Planilha1$`" type="V_String" />
+            <Field name="PESOS" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\Projeto 2\base\Alunos.xlsx|||`Planilha1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="138" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="NOME" selected="True" type="String" size="15" />
+            <SelectField field="TURMA" selected="True" type="String" size="5" />
+            <SelectField field="NOTAS" selected="True" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="318" y="18" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\yasmi\AppData\Local\Temp\Engine_1064_5ed9ce402719474abb1d0b66181b754c_\Engine_1064_b86463301ae61642a390c357c7c33ad7~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Perfil</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="258" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="ID_ALUNO" />
+            <Field field="NOME" />
+            <Field field="IDADE" />
+            <Field field="TURMA" />
+          </GroupFields>
+          <HeaderField field="NOTAS_BI" />
+          <DataField field="NOTAS" />
+          <Methods>
+            <Method method="First" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="ID_ALUNO" source="CrossTab:Group:First:" type="Double" />
+            <Field name="NOME" size="15" source="CrossTab:Group:First:" type="String" />
+            <Field name="IDADE" source="CrossTab:Group:First:" type="Double" />
+            <Field name="TURMA" size="5" source="CrossTab:Group:First:" type="String" />
+            <Field name="N1" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\Projeto 2\base\Alunos.xlsx|||`Planilha1$`" type="Double" />
+            <Field name="N2" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\Projeto 2\base\Alunos.xlsx|||`Planilha1$`" type="Double" />
+            <Field name="N3" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\Projeto 2\base\Alunos.xlsx|||`Planilha1$`" type="Double" />
+            <Field name="N4" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\Projeto 2\base\Alunos.xlsx|||`Planilha1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="258" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="ID_ALUNO" />
+            <Field field="NOME" />
+            <Field field="IDADE" />
+            <Field field="TURMA" />
+          </GroupFields>
+          <HeaderField field="PESOS_BI" />
+          <DataField field="PESOS" />
+          <Methods>
+            <Method method="First" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="ID_ALUNO" source="CrossTab:Group:First:" type="Double" />
+            <Field name="NOME" size="15" source="CrossTab:Group:First:" type="String" />
+            <Field name="IDADE" source="CrossTab:Group:First:" type="Double" />
+            <Field name="TURMA" size="5" source="CrossTab:Group:First:" type="String" />
+            <Field name="P1" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\Projeto 2\base\Alunos.xlsx|||`Planilha1$`" type="Double" />
+            <Field name="P2" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\Projeto 2\base\Alunos.xlsx|||`Planilha1$`" type="Double" />
+            <Field name="P3" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\Projeto 2\base\Alunos.xlsx|||`Planilha1$`" type="Double" />
+            <Field name="P4" source="File: C:\Users\yasmi\Desktop\Breno\Alteryx\Projeto 2\base\Alunos.xlsx|||`Planilha1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="342" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\yasmi\AppData\Local\Temp\Engine_1064_5ed9ce402719474abb1d0b66181b754c_\Engine_1064_236989fe157e964a9536aa92b389c303~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Perfil</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="366" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="ID_ALUNO" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="ID_ALUNO" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_ID_ALUNO" selected="False" rename="Right_ID_ALUNO" input="Right_" />
+                <SelectField field="Right_NOME" selected="False" rename="Right_NOME" input="Right_" />
+                <SelectField field="Right_IDADE" selected="False" rename="Right_IDADE" input="Right_" />
+                <SelectField field="Right_TURMA" selected="False" rename="Right_TURMA" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="654" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\yasmi\AppData\Local\Temp\Engine_1064_5ed9ce402719474abb1d0b66181b754c_\Engine_1064_695c0cf9bf9888498334be381955b9ec~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Perfil</DefaultTab>
+              <Hints />
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="462" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="ID_ALUNO" selected="True" />
+            <SelectField field="NOME" selected="True" />
+            <SelectField field="IDADE" selected="True" />
+            <SelectField field="TURMA" selected="True" />
+            <SelectField field="P1" selected="True" />
+            <SelectField field="N1" selected="True" />
+            <SelectField field="P2" selected="True" />
+            <SelectField field="N2" selected="True" />
+            <SelectField field="P3" selected="True" />
+            <SelectField field="N3" selected="True" />
+            <SelectField field="P4" selected="True" />
+            <SelectField field="N4" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="558" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="([P1]*[N1] +[P2]*[N2] + [P3]*[N3] + [P4] * [N4])/([P1]+[P2]+[P3]+[P4])&#xA;" field="Média Ponderada" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Média Ponderada = ([P1]*[N1] +[P2]*[N2] + [P3]*[N3] + [P4] * [N4])/([P1]+[P2]+[P...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="258" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="TURMA" action="GroupBy" rename="TURMA" />
+            <SummarizeField field="NOTAS" action="Avg" rename="Avg_NOTAS" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="354" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\yasmi\AppData\Local\Temp\Engine_1064_5ed9ce402719474abb1d0b66181b754c_\Engine_1064_a4abc4a84448f547b130ba74a3cafbf1~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Perfil</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings>
+        <Position x="258" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="CountRecords.yxmc" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="354" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\yasmi\AppData\Local\Temp\Engine_1064_5ed9ce402719474abb1d0b66181b754c_\Engine_1064_2fd2d4fc4ff9244683204deae3e2ec6d~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Perfil</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="16" Connection="Input8" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="8" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="8" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Join" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output9" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>projeto 2</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="dd17a7d8-b911-48b0-af61-b6611c6ead7e" />
+      <Telemetry>
+        <PreviousWorkflowId value="3e2348b9-7c49-4709-8f6f-b156cb8f5fad" />
+        <OriginWorkflowId value="3e2348b9-7c49-4709-8f6f-b156cb8f5fad" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
