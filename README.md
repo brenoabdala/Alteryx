@@ -1,8 +1,8 @@
 # Alteryx
 
-<p>Foi realizada uma analise e processamentos dos dados(ETL) de passageiros do navio Titânic, base essa disponibilizada pelo site web.stanford.edu(https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/problem12.html).
-
 <p><b>Projeto 01 - Passageiros do Titanic</b></p>
+
+<p>Foi realizada uma analise e processamentos dos dados(ETL) de passageiros do navio Titânic, base essa disponibilizada pelo site web.stanford.edu(https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/problem12.html).
 
 ![image](https://github.com/user-attachments/assets/c6a09840-9a17-4884-9b33-6c5593a8959d)
 
