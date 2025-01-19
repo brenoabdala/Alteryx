@@ -16,5 +16,5 @@
 <p> - Tratamento de dados (reclassificando o nomes - tradução); </p>
 <p> - Classificação crescente; </p>
 <p> - Filtro de dados. </p>
-
+<p> Ao final do processo é gerado a base com sobreviventes do naufragio e não sobreviventes.</p>
  
