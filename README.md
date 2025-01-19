@@ -10,11 +10,11 @@
 
 
 <p>Consiste na construção de um fluxo de ETL onde é realizado:</p>
-- Limpeza dos dados;
-- Criação de IDs;
-- Seleção de campos e renomeação das colunas;
-- Tratamento de dados (reclassificando o nomes - tradução);
-- Classificação crescente;
-- Filtro de dados.
+<p> - Limpeza dos dados; </p>
+<p> - Criação de IDs; </p>
+<p> - Seleção de campos e renomeação das colunas; </p>
+<p> - Tratamento de dados (reclassificando o nomes - tradução); </p>
+<p> - Classificação crescente; </p>
+<p> - Filtro de dados. </p>
 
  
