@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2024.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="30" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\Breno\Downloads\Customers.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Customers.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="CustomerID" size="254" source="File: C:\Users\Breno\Downloads\Customers.csv" type="V_String" />
+            <Field name="Store Number" size="254" source="File: C:\Users\Breno\Downloads\Customers.csv" type="V_String" />
+            <Field name="Customer Segment" size="254" source="File: C:\Users\Breno\Downloads\Customers.csv" type="V_String" />
+            <Field name="Responder" size="254" source="File: C:\Users\Breno\Downloads\Customers.csv" type="V_String" />
+            <Field name="First Name" size="254" source="File: C:\Users\Breno\Downloads\Customers.csv" type="V_String" />
+            <Field name="Last Name" size="254" source="File: C:\Users\Breno\Downloads\Customers.csv" type="V_String" />
+            <Field name="Address" size="254" source="File: C:\Users\Breno\Downloads\Customers.csv" type="V_String" />
+            <Field name="City" size="254" source="File: C:\Users\Breno\Downloads\Customers.csv" type="V_String" />
+            <Field name="State" size="254" source="File: C:\Users\Breno\Downloads\Customers.csv" type="V_String" />
+            <Field name="Zip" size="254" source="File: C:\Users\Breno\Downloads\Customers.csv" type="V_String" />
+            <Field name="Lat" size="254" source="File: C:\Users\Breno\Downloads\Customers.csv" type="V_String" />
+            <Field name="Lon" size="254" source="File: C:\Users\Breno\Downloads\Customers.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="JupyterCode">
+        <Position x="162" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <WorkflowName>c:\users\breno\desktop\alteryx\proejto com python7.yxmd</WorkflowName>
+          <JupyterProduction>false</JupyterProduction>
+          <vEnvName>designerbasetools_venv</vEnvName>
+          <DefaultVenv>1</DefaultVenv>
+          <productionModeScript>#################################
+# List all non-standard packages to be imported by your 
+# script here (only missing packages will be installed)
+from ayx import Package
+#Package.installPackages(['pandas','numpy'])
+
+
+#################################
+from ayx import Alteryx
+#Entrada #1
+df = Alteryx.read("#1")
+df1 = df['Customer Segment']
+
+df1 = pd.DataFrame(df1)
+df2 = df[df['Customer Segment']=='Corporate']
+df2 =pd.DataFrame(df2)
+#Saida 2 e 5
+Alteryx.write(df1,2)
+Alteryx.write(df1,5)</productionModeScript>
+          <Port>55899</Port>
+          <JupyterGuidDir>1e970e9a55eb89bd7e80f84c4b29dc66</JupyterGuidDir>
+          <JupyterGuidCopy />
+          <LastExecutedByEngineVersion>2024.2.1.41</LastExecutedByEngineVersion>
+          <Notebook><![CDATA[{"cells":[{"metadata":{"ayx":{"cell_css":"border: 3px solid #357; margin: 4px; background: #fbffff","contents_keyword":"Alteryx.help()","label":"info"}},"cell_type":"markdown","source":["Run `Alteryx.help()` for info about useful functions.  \n","i.e., `Alteryx.read(\"#1\")`, `Alteryx.write(df,1)`, `Alteryx.getWorkflowConstant(\"Engine.WorkflowDirectory\")`"]},{"metadata":{"ayx":{"cell_css":"border: 1px solid #58a; margin: 2px;","contents_keyword":"installPackages","label":"deps"},"execution":{"iopub.execute_input":"2025-01-20T11:46:31.734344Z","iopub.status.busy":"2025-01-20T11:46:31.733330Z","iopub.status.idle":"2025-01-20T11:46:31.757447Z","shell.execute_reply":"2025-01-20T11:46:31.755759Z"}},"cell_type":"code","source":["# List all non-standard packages to be imported by your \n","# script here (only missing packages will be installed)\n","from ayx import Package\n","#Package.installPackages(['pandas','numpy'])"],"execution_count":1,"outputs":[]},{"metadata":{"execution":{"iopub.execute_input":"2025-01-20T11:46:31.762819Z","iopub.status.busy":"2025-01-20T11:46:31.762484Z","iopub.status.idle":"2025-01-20T11:46:32.582733Z","shell.execute_reply":"2025-01-20T11:46:32.580877Z"}},"cell_type":"code","source":["from ayx import Alteryx\n","import pandas as pd\n","#Entrada #1\n","df = Alteryx.read(\"#1\")\n","df1 = df['Customer Segment']\n","\n","df1 = pd.DataFrame(df1)\n","df2 = df[df['Customer Segment']=='Corporate']\n","df2 =pd.DataFrame(df2)\n","#Saida 2 e 5\n","# Alteryx.write(df1,2)\n","Alteryx.write(df1,5)"],"execution_count":2,"outputs":[]}],"metadata":{"kernelspec":{"name":"designerbasetools_venv","display_name":"designerbasetools_venv","language":"python"},"language_info":{"name":"python","version":"3.10.13","mimetype":"text/x-python","codemirror_mode":{"name":"ipython","version":3},"pygments_lexer":"ipython3","nbconvert_exporter":"python","file_extension":".py"}},"nbformat":4,"nbformat_minor":2}]]></Notebook>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxJupyterPluginEngine.dll" EngineDllEntryPoint="AlteryxJupyter" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="306" y="18" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\Breno\AppData\Local\Temp\Alteryx\Engine_15640_82ea70b60e7741578e144685f5b4a4dd_\Engine_15640_cce7cad220a846a1bd66eddb0907bfa4~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Perfil</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="306" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\Breno\AppData\Local\Temp\Alteryx\Engine_13260_0ee00f9653364e9ba354b58aefd8261d_\Engine_13260_3c71f854471248f29c6a872c43bde339~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Perfil</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection name="#1">
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output2" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output5" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>proejto com python7</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="b69e502e-1261-4f9c-830c-2fcb1e9a176d" />
+      <Telemetry>
+        <PreviousWorkflowId value="cafc92e4-bf57-4364-b205-f5fc85e1238c" />
+        <OriginWorkflowId value="cafc92e4-bf57-4364-b205-f5fc85e1238c" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
