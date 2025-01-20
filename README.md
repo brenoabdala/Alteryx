@@ -38,9 +38,18 @@
 
 <p>Foi realizado no projeto:</p>
 <p> - Importação da base de alunos;</p>
-<p> - Ajustado a Tipagem dos campps;</p>
+<p> - Ajustado a Tipagem dos campos;</p>
 <p> - Realizado a transposição de linha para coluna;</p>
 <p> - Join de dados após o tratamento;</p>
 <p> - Calculo da média ponderada;</p>
 <p> - Média por turma;</p>
 <p> - Contagem de registros.</p>
+
+
+<p><b>Projeto 03 - Extraindo dados API via CEP</b></p>
+
+<p> O projeto consiste em extrair dados da API do via CEP.</p>
+
+![image](https://github.com/user-attachments/assets/c25f04ca-6e92-4eb8-9a21-a6e3ef04e261)
+
+
