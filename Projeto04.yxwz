@@ -1,0 +1,646 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2024.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="30" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>BaseCepResumida.xlsx
+Query=`Planilha1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="ID" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="Double" />
+            <Field name="DL_PostalCode" size="255" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="V_String" />
+            <Field name="Nome" size="255" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="210" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Replace([PostalCode], '-', '')" field="PostalCode" size="255" type="V_String" enabled="true" />
+            <FormulaField expression="&quot;https://viacep.com.br/ws/&quot; +  [PostalCode]+ &quot;/json&quot;" field="Request" size="1000" type="V_String" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>PostalCode = Replace([PostalCode], '-', '')
+Request = "https://viacep.com.br/ws/...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Id" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="Double" />
+            <Field name="PostalCode" size="255" source="Formula: Replace([PostalCode], '-', '')" type="V_String" />
+            <Field name="Nome" size="255" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="V_String" />
+            <Field name="Request" size="1000" source="Formula: &quot;https://viacep.com.br/ws/&quot; +  [PostalCode]+ &quot;/json&quot;" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="114" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="ID" selected="True" rename="Id" />
+            <SelectField field="DL_PostalCode" selected="True" rename="PostalCode" />
+            <SelectField field="Nome" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Id" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="Double" />
+            <Field name="PostalCode" size="255" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="V_String" />
+            <Field name="Nome" size="255" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+        <Position x="486" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <JSON_Field>DownloadData</JSON_Field>
+          <IncludeInOutput value="False" />
+          <SingleField value="False" />
+          <Mode>SingleField</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Id" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="Double" />
+            <Field name="PostalCode" size="255" source="Formula: Replace([PostalCode], '-', '')" type="V_String" />
+            <Field name="Nome" size="255" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="V_String" />
+            <Field name="Request" size="1000" source="Formula: &quot;https://viacep.com.br/ws/&quot; +  [PostalCode]+ &quot;/json&quot;" type="V_String" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+            <Field name="JSON_Name" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSON_Parse" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="594" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="Id" />
+          </GroupFields>
+          <HeaderField field="JSON_Name" />
+          <DataField field="JSON_ValueString" />
+          <Methods>
+            <Method method="First" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+          <RetainSpecChars value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Id" source="CrossTab:Group:First:" type="Double" />
+            <Field name="bairro" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="cep" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="complemento" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="ddd" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="erro" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="estado" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="gia" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="ibge" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="localidade" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="logradouro" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="regiao" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="siafi" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="uf" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="unidade" size="1073741823" source="JSON_Parse" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="786" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Id" selected="True" />
+            <SelectField field="bairro" selected="True" type="V_String" size="150" />
+            <SelectField field="cep" selected="True" type="V_String" size="9" />
+            <SelectField field="erro" selected="True" />
+            <SelectField field="estado" selected="True" />
+            <SelectField field="localidade" selected="True" />
+            <SelectField field="logradouro" selected="True" size="150" />
+            <SelectField field="regiao" selected="True" />
+            <SelectField field="uf" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Id" source="CrossTab:Group:First:" type="Double" />
+            <Field name="bairro" size="150" source="JSON_Parse" type="V_String" />
+            <Field name="cep" size="9" source="JSON_Parse" type="V_String" />
+            <Field name="erro" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="estado" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="localidade" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="logradouro" size="150" source="JSON_Parse" type="V_WString" />
+            <Field name="regiao" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="uf" size="1073741823" source="JSON_Parse" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="882" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Nome" selected="True" input="Left_" />
+                <SelectField field="Right_ID" selected="True" rename="Right_ID" input="Right_" />
+                <SelectField field="Right_bairro" selected="True" input="Right_" />
+                <SelectField field="Right_cep" selected="True" input="Right_" />
+                <SelectField field="Right_erro" selected="True" input="Right_" />
+                <SelectField field="Right_estado" selected="True" input="Right_" />
+                <SelectField field="Right_localidade" selected="True" input="Right_" />
+                <SelectField field="Right_logradouro" selected="True" input="Right_" />
+                <SelectField field="Right_regiao" selected="True" input="Right_" />
+                <SelectField field="Right_uf" selected="True" input="Right_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="ID" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="Double" />
+            <Field name="DL_PostalCode" size="255" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="V_String" />
+            <Field name="Nome" size="255" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Nome" size="255" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="V_String" />
+            <Field name="Right_ID" source="CrossTab:Group:First:" type="Double" />
+            <Field name="bairro" size="150" source="JSON_Parse" type="V_String" />
+            <Field name="cep" size="9" source="JSON_Parse" type="V_String" />
+            <Field name="erro" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="estado" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="localidade" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="logradouro" size="150" source="JSON_Parse" type="V_WString" />
+            <Field name="regiao" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="uf" size="1073741823" source="JSON_Parse" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Id" source="CrossTab:Group:First:" type="Double" />
+            <Field name="bairro" size="150" source="JSON_Parse" type="V_String" />
+            <Field name="cep" size="9" source="JSON_Parse" type="V_String" />
+            <Field name="erro" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="estado" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="localidade" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="logradouro" size="150" source="JSON_Parse" type="V_WString" />
+            <Field name="regiao" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="uf" size="1073741823" source="JSON_Parse" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+        <Position x="294" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <URLField>Request</URLField>
+          <OutputMode>String</OutputMode>
+          <CodePage>65001</CodePage>
+          <EncodeURLs value="True" />
+          <Headers>
+            <NameValues />
+            <Fields orderChanged="False">
+              <Field name="Id" selected="False" />
+              <Field name="PostalCode" selected="False" />
+              <Field name="Nome" selected="False" />
+              <Field name="Request" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </Fields>
+          </Headers>
+          <Payload>
+            <HTTPAction>GET</HTTPAction>
+            <QueryStringBodyMode>Compose</QueryStringBodyMode>
+            <ComposeNameValues />
+            <ComposeFields orderChanged="False">
+              <Field name="Id" selected="False" />
+              <Field name="PostalCode" selected="False" />
+              <Field name="Nome" selected="False" />
+              <Field name="Request" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </ComposeFields>
+          </Payload>
+          <numConnections>1</numConnections>
+          <Timeout>600</Timeout>
+          <EnableRPM value="False" />
+          <DcmAdvancedAuth value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Id" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="Double" />
+            <Field name="PostalCode" size="255" source="Formula: Replace([PostalCode], '-', '')" type="V_String" />
+            <Field name="Nome" size="255" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="V_String" />
+            <Field name="Request" size="1000" source="Formula: &quot;https://viacep.com.br/ws/&quot; +  [PostalCode]+ &quot;/json&quot;" type="V_String" />
+            <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="390" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>Contains([DownloadHeaders],"200")</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Contains([DownloadHeaders],"200")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Id" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="Double" />
+            <Field name="PostalCode" size="255" source="Formula: Replace([PostalCode], '-', '')" type="V_String" />
+            <Field name="Nome" size="255" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="V_String" />
+            <Field name="Request" size="1000" source="Formula: &quot;https://viacep.com.br/ws/&quot; +  [PostalCode]+ &quot;/json&quot;" type="V_String" />
+            <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Id" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="Double" />
+            <Field name="PostalCode" size="255" source="Formula: Replace([PostalCode], '-', '')" type="V_String" />
+            <Field name="Nome" size="255" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="V_String" />
+            <Field name="Request" size="1000" source="Formula: &quot;https://viacep.com.br/ws/&quot; +  [PostalCode]+ &quot;/json&quot;" type="V_String" />
+            <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="690" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>!=</Operator>
+            <Field>erro</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2025-01-20 07:43:33</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2025-01-20 07:43:33</StartDate>
+              <EndDate>2025-01-20 07:43:33</EndDate>
+              <Operand>1</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[erro] != "1"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Id" source="CrossTab:Group:First:" type="Double" />
+            <Field name="bairro" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="cep" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="complemento" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="ddd" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="erro" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="estado" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="gia" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="ibge" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="localidade" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="logradouro" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="regiao" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="siafi" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="uf" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="unidade" size="1073741823" source="JSON_Parse" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Id" source="CrossTab:Group:First:" type="Double" />
+            <Field name="bairro" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="cep" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="complemento" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="ddd" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="erro" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="estado" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="gia" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="ibge" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="localidade" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="logradouro" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="regiao" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="siafi" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="uf" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="unidade" size="1073741823" source="JSON_Parse" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="954" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Replace([cep],&quot;-&quot;,&quot;&quot;)" field="cep" size="9" type="V_String" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[cep = Replace([cep],"-","")
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Nome" size="255" source="File: C:\Users\Breno\Downloads\BaseCepResumida.xlsx|||`Planilha1$`" type="V_String" />
+            <Field name="Right_ID" source="CrossTab:Group:First:" type="Double" />
+            <Field name="bairro" size="150" source="JSON_Parse" type="V_String" />
+            <Field name="cep" size="9" source="Formula: Replace([cep],&quot;-&quot;,&quot;&quot;)" type="V_String" />
+            <Field name="erro" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="estado" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="localidade" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="logradouro" size="150" source="JSON_Parse" type="V_WString" />
+            <Field name="regiao" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="uf" size="1073741823" source="JSON_Parse" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1026" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">C:\Users\Breno\Desktop\Alteryx\Base\Saida_base\BASE_FINAL_VIA_CEP.csv</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>BASE_FINAL_VIA_CEP.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="11" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Join" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="True" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="True" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>PROJETO3</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="a880800f-fcd0-404a-81ac-25a7e485a8fa" />
+      <Telemetry>
+        <PreviousWorkflowId value="8b4cf27e-1f61-4cd4-9b3b-de866655a6a9" />
+        <OriginWorkflowId value="8b4cf27e-1f61-4cd4-9b3b-de866655a6a9" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Perguntas</Description>
+          <Name>Guia (3)</Name>
+          <ToolId value="3" />
+          <Questions />
+        </Question>
+      </Questions>
+      <ModuleType>Wizard</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="16" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
