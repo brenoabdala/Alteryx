@@ -29,3 +29,18 @@
 <p> - Tratamento de dados; </p>
 <p> - Agrupamento de dados por transação; </p>
 <p> - Seleção de campos necessários para relatório final. </p>
+
+
+<p>Projeto 03 - Base de Alunos</p>
+<p> O projeto consiste em calcular a média ponderada, média da turma e a contagem de alunos.</p>
+
+![image](https://github.com/user-attachments/assets/e4d9626c-a4b0-434c-a658-4ee4f1931e80)
+
+<p>Foi realizado no projeto:</p>
+<p> - Importação da base de alunos;</p>
+<p> - Ajustado a Tipagem dos campps;</p>
+<p> - Realizado a transposição de linha para coluna;</p>
+<p> - Join de dados após o tratamento;</p>
+<p> - Calculo da média ponderada;</p>
+<p> - Média por turma;</p>
+<p> - Contagem de registros.</p>
