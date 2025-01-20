@@ -52,4 +52,11 @@
 
 ![image](https://github.com/user-attachments/assets/c25f04ca-6e92-4eb8-9a21-a6e3ef04e261)
 
+<p><b>Projeto 05 - Trabanlhando com Python</b></p>
+
+![image](https://github.com/user-attachments/assets/c2832a6b-2ce4-4875-8767-58ea2f610b8d)
+
+
+<p> O projeto consiste em realizar o tratamento dos dados via python e disponibilza-lo posteriormente. O projeto é um exemplo rápido de como se aplicar o python com a biblioteca pandas no alteryx, para realizar o tratamento dos dados.</p>
+
 
