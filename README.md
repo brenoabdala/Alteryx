@@ -31,7 +31,7 @@
 <p> - Seleção de campos necessários para relatório final. </p>
 
 
-<p>Projeto 03 - Base de Alunos</p>
+<p><b>Projeto 03 - Base de Alunos</b></p>
 <p> O projeto consiste em calcular a média ponderada, média da turma e a contagem de alunos.</p>
 
 ![image](https://github.com/user-attachments/assets/e4d9626c-a4b0-434c-a658-4ee4f1931e80)
