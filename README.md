@@ -16,6 +16,7 @@
 <p> - Filtro de dados. </p>
 <p> Ao final do processo é gerado a base com sobreviventes do naufragio e não sobreviventes.</p>
 
+<hr>
 
  <p><b>Projeto 02 - Base de Vendas</b></p>
 
@@ -30,6 +31,7 @@
 <p> - Agrupamento de dados por transação; </p>
 <p> - Seleção de campos necessários para relatório final. </p>
 
+<hr>
 
 <p><b>Projeto 03 - Base de Alunos</b></p>
 <p> O projeto consiste em calcular a média ponderada, média da turma e a contagem de alunos.</p>
@@ -45,6 +47,7 @@
 <p> - Média por turma;</p>
 <p> - Contagem de registros.</p>
 
+<hr>
 
 <p><b>Projeto 04 - Extraindo dados API via CEP</b></p>
 
@@ -52,10 +55,11 @@
 
 ![image](https://github.com/user-attachments/assets/c25f04ca-6e92-4eb8-9a21-a6e3ef04e261)
 
+<hr>
+
 <p><b>Projeto 05 - Trabanlhando com Python</b></p>
 
 ![image](https://github.com/user-attachments/assets/c2832a6b-2ce4-4875-8767-58ea2f610b8d)
-
 
 <p> O projeto consiste em realizar o tratamento dos dados via python e disponibilza-lo posteriormente. O projeto é um exemplo rápido de como se aplicar o python com a biblioteca pandas no alteryx, para realizar o tratamento dos dados.</p>
 
